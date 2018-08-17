@@ -17,25 +17,24 @@
         #container {
             display: flex;
             flex-direction: unset;
-           
+
         }
 
         #page-footer {}
 
-        .otvet{
+        .otvet {
             width: 500;
             height: 200;
         }
 
-        .button{
+        .button {
             height: 75px;
             width: 200px;
             background: coral
-
         }
 
 
-        .JSDis{
+        .JSDis {
             display: flex;
             flex-direction: row;
             height: 75px;
@@ -132,7 +131,7 @@
         </li>
 
     </nav>
-        <div id="wrap">
+    <div id="wrap">
         <div id="sidebar">
             <H1>Надпись</H1>
             <a href="Ссылка">
@@ -140,52 +139,40 @@
             </a>
         </div>
         <main id="container">
+            A:
+            <input type="text" class="JSDis" id="DisA" placeholder="Введите A" value="2">
+            <input type="text" class="JSDis" id="DisB" placeholder="Введите B" value="8">
+            <input type="text" class="JSDis" id="DisC" placeholder="Введите C" value="15"> D=b^2-4*a*c;
+            <input type="text" class="otvet" id="otvet1" placeholder="ДИСКРИМИНАЦИЯ">
+            <input type="text" class="otvet" id="otvet2" placeholder="X-1">
+            <input type="text" class="otvet" id="otvet3" placeholder="Что-нибудь">
 
-                <input type="text" class="JSDis" id="DisA" placeholder="Введите A">
-                <input type="text" class="JSDis" id="DisB" placeholder="Введите B">
-                <input type="text" class="JSDis" id="DisC" placeholder="Введите C">
-                <input type="text" class="otvet" id="otvet1" placeholder="ДИСКРИМИНАЦИЯ">
-                <input type="text" class="otvet" id="otvet2" placeholder="X-1">
-                <input type="text" class="otvet" id="otvet3" placeholder="Что-нибудь">
-
-                <input type="button" class="button" id="start" value="Старт" >
+            <input type="button" class="button" id="start" value="Старт">
             <script>
-              
-                    
-                
-        
-                var i =0;
-               document.getElementById('start').onclick = function start (){
-                var DisA = document.getElementsByid('DisA');
-                var DisB = document.getElementsByid('DisB');
-                var DisC = document.getElementsByid('DisC');
-                    d = math.pow(DisB,2) - 4 *DisC;
-                    document.getElementById(otvet).value=(d);
-                    if(d>-1){
-                        
-                        document.getElementById(otvet1).value =("D=" +DisB+"*"+DisA+"+"+DisC+"*4 ="+DisB*DisA+DisC*4 );
-                        document.getElementById(otvet2).value =("-"+DisB +"+"+"√"+d+"/2 ="+DisB*-1 + Math.sqrt(b,2));
-                        document.getElementById(otvet3).value =("-"+DisB +"+"+"√"+d+"/2 ="+DisB*-1 - Math.sqrt(b,2));
+                var i = 0;
+                document.getElementById('start').onclick = function start() {
+                    var DisA = document.getElementById('DisA');
+                    var DisB = document.getElementById('DisB');
+                    var DisC = document.getElementById('DisC');
+                    var otvet1 = document.getElementById('otvet1');
+                    var otvet2 = document.getElementById('otvet2');
+                    var otvet3 = document.getElementById('otvet3');
+
+                    d = Math.pow(parseInt(DisB.value), 2) - 4 * parseInt(DisA.value) * parseInt(DisC.value);
+                    otvet1.value = d;
+                    if (d > -1) {
+
+                        otvet1.value = ("D=" + DisB + "*" + DisA + "+" + DisC + "*4 =" + DisB * DisA + DisC * 4);
+                        otvet2.value = ("-" + DisB + "+" + "√" + d + "/2 =" + DisB * -1 + Math.sqrt(b, 2));
+                        otvet3.value = ("-" + DisB + "+" + "√" + d + "/2 =" + DisB * -1 - Math.sqrt(b, 2));
                     }
-                    else{
-                        document.getElementById(otvet2).value=("D<0, значит уравнение невозможнорешить");
-                        document.getElementById(otvet1).value =("D=" +DisB+"*"+DisA+"+"+DisC+"*4 ="+DisB*DisA+DisC*4 );
-                        document.getElementById(otvet3).value=("Бывает");
+                    else {
+                        otvet2.value = ("D<0, значит уравнение невозможнорешить");
+                        otvet1.value = ("D=" + DisB + "*" + DisA + "+" + DisC + "*4 =" + DisB * DisA + DisC * 4);
+                        otvet3.value = ("Бывает");
                     }
-                    
-                        
-                    
-                    
                 }
-              
 
-
-
-            
-            
-
-
-                
             </script>
 
 
